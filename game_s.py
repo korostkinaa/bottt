@@ -38,8 +38,18 @@ def callback_worker(bot, cur_user, cmd, par, call):
         chats[call.message.chat.id][call.from_user.username] -= 1
         initilaze_dict(bot, chat_id)
     elif cmd == "Var":
-
-
+        keyboard = types.InlineKeyboardMarkup()
+        bot.send_message(id, random.choice(phrase),
+                     reply_markup=keyb.add(types.InlineKeyboardButton("Вариант 1", callback_data="MyGame|IDK")))
+        keyboard = types.InlineKeyboardMarkup()
+        bot.send_message(id, random.choice(phrase),
+                     reply_markup=keyb.add(types.InlineKeyboardButton("Вариант 2", callback_data="MyGame|IDK")))
+        keyboard = types.InlineKeyboardMarkup()
+        bot.send_message(id, random.choice(phrase),
+                     reply_markup=keyb.add(types.InlineKeyboardButton("Вариант 3", callback_data="MyGame|IDK")))
+        keyboard = types.InlineKeyboardMarkup()
+        bot.send_message(id, random.choice(phrase),
+                     reply_markup=keyb.add(types.InlineKeyboardButton("Вариант 4", callback_data="MyGame|IDK")))
 
 
 def initilaze_dict(bot, id):
